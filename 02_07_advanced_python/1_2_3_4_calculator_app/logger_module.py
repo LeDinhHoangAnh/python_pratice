@@ -2,7 +2,7 @@
 
 from datetime import datetime
 
-# Context Manager ghi log vào file
+# Context Manager write log into file
 class LogWriter:
     def __init__(self, filepath):
         self.filepath = filepath
@@ -14,7 +14,7 @@ class LogWriter:
     def __exit__(self, exc_type, exc_val, exc_tb):
         self.file.close()
 
-# Decorator để log hàm đã gọi
+# Decorator to log function
 def log_operation(func):
     def wrapper(*args, **kwargs):
         result = func(*args, **kwargs)
